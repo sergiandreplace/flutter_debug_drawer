@@ -1,7 +1,7 @@
 name: flutter_debug_drawer
-description: A debug drawer menu for better development
-
-
+description: A debug drawer menu for better Flutter development
+author: Sergi Martínez <sergi.martinez@gmail.com>
+homepage: https://github.com/sergiandreplace/flutter_debug_drawer
 version: 0.0.1+1
 
 environment:
