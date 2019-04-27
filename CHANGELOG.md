@@ -1,6 +1,6 @@
 # Changelog
 
-## v.0.0.2 ()
+## v.0.0.2 (20190429)
 
 * Added Package Info module.
 
