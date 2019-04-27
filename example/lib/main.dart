@@ -4,9 +4,6 @@ import 'package:flutter_debug_drawer/flutter_debug_drawer.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,10 +21,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
-
 class MyHomePage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +43,8 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.of(context).push(PageRouteBuilder(pageBuilder: (context, _, __) => Page2())),
+        onPressed: () => Navigator.of(context)
+            .push(PageRouteBuilder(pageBuilder: (context, _, __) => Page2())),
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
