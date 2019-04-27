@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'debug_drawer_theme.dart';
@@ -7,11 +8,15 @@ class DebugDrawerBuilder {
     List<Widget> modules = const [],
     DebugDrawerTheme theme,
   }) {
-    return (BuildContext context, Widget widget) => DebugDrawer(
-          child: widget,
-          modules: modules,
-          theme: theme ?? DebugDrawerTheme.defaultTheme,
-        );
+    if (!kReleaseMode) {
+      return (BuildContext context, Widget widget) => DebugDrawer(
+            child: widget,
+            modules: modules,
+            theme: theme ?? DebugDrawerTheme.defaultTheme,
+          );
+    } else {
+      return null;
+    }
   }
 }
 
