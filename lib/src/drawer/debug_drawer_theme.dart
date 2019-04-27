@@ -43,7 +43,7 @@ class DebugDrawerTheme {
   static DebugDrawerTheme defaultTheme = DebugDrawerTheme(
     backgroundColor: Colors.black,
     sectionColor: Colors.black,
-    width: 411,
+    width: 350,
     sectionPadding: EdgeInsets.all(8),
     sectionMargin: EdgeInsets.all(4),
     sectionTitleStyle: defaultTextStyle.copyWith(
