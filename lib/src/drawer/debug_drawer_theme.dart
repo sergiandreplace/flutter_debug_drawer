@@ -25,8 +25,7 @@ class DebugDrawerTheme {
     this.sectionTitleSeparatorHeight,
     this.labelStyle,
     this.valueStyle,
-  })
-      : assert(backgroundColor != null),
+  })  : assert(backgroundColor != null),
         assert(sectionColor != null),
         assert(width != null),
         assert(sectionPadding != null),

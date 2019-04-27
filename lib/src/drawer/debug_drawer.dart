@@ -7,8 +7,7 @@ class DebugDrawerBuilder {
     List<Widget> modules = const [],
     DebugDrawerTheme theme,
   }) {
-    return (BuildContext context, Widget widget) =>
-        DebugDrawer(
+    return (BuildContext context, Widget widget) => DebugDrawer(
           child: widget,
           modules: modules,
           theme: theme ?? DebugDrawerTheme.defaultTheme,
@@ -43,14 +42,8 @@ class DebugDrawer extends StatelessWidget {
         removeTop: true,
         context: context,
         child: Container(
-          padding: EdgeInsets.fromLTRB(4, MediaQuery
-              .of(context)
-              .padding
-              .top, 4,
-              MediaQuery
-                  .of(context)
-                  .padding
-                  .bottom),
+          padding: EdgeInsets.fromLTRB(4, MediaQuery.of(context).padding.top, 4,
+              MediaQuery.of(context).padding.bottom),
           color: theme.backgroundColor,
           width: theme.width,
           child: ListView(
