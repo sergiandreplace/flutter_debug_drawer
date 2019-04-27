@@ -41,19 +41,23 @@ class DebugDrawer extends StatelessWidget {
     return Scaffold(
       primary: false,
       body: child,
-      endDrawer: Container(
-        padding: EdgeInsets.fromLTRB(16, MediaQuery
-            .of(context)
-            .padding
-            .top, 16,
-            MediaQuery
-                .of(context)
-                .padding
-                .bottom),
-        color: theme.backgroundColor,
-        width: theme.width,
-        child: ListView(
-          children: modules,
+      endDrawer: MediaQuery.removePadding(
+        removeTop: true,
+        context: context,
+        child: Container(
+          padding: EdgeInsets.fromLTRB(4, MediaQuery
+              .of(context)
+              .padding
+              .top, 4,
+              MediaQuery
+                  .of(context)
+                  .padding
+                  .bottom),
+          color: theme.backgroundColor,
+          width: theme.width,
+          child: ListView(
+            children: modules,
+          ),
         ),
       ),
     );
@@ -61,9 +65,10 @@ class DebugDrawer extends StatelessWidget {
 }
 
 class DebugDrawerModule extends StatelessWidget {
-  DebugDrawerModule({Key key, this.child}) : super(key: key);
+  DebugDrawerModule({Key key, this.title, this.child}) : super(key: key);
 
   final Widget child;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -73,9 +78,24 @@ class DebugDrawerModule extends StatelessWidget {
     return Padding(
       padding: theme.sectionMargin,
       child: Container(
-        padding: theme.sectionPadding,
         color: theme.sectionColor,
-        child: child,
+        padding: theme.sectionPadding,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              title,
+              style: theme.sectionTitleStyle,
+            ),
+            Padding(
+              padding: theme.sectionTitleSeparatorPadding,
+              child: Container(
+                  height: theme.sectionTitleSeparatorHeight,
+                  color: theme.sectionTitleSeparatorColor),
+            ),
+            child,
+          ],
+        ),
       ),
     );
   }
@@ -85,6 +105,7 @@ class PlatformModule extends DebugDrawerModule {
   @override
   Widget build(BuildContext context) {
     return DebugDrawerModule(
+      title: "Platform",
       child: Column(
         children: [
           DebugDrawerField(label: "OS", value: "${Platform.operatingSystem}"),
@@ -111,8 +132,16 @@ class MediaQueryModule extends DebugDrawerModule {
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);
     return DebugDrawerModule(
+      title: "MediaQuery",
       child: Column(
         children: [
+          DebugDrawerField(
+              label: "Size",
+              value:
+              "width: ${mediaQuery.size.width.toStringAsFixed(
+                  2)}\nheight: ${mediaQuery.size.height.toStringAsFixed(2)}"),
+          DebugDrawerField(
+              label: "Insets", value: "${mediaQuery.viewInsets.top}"),
           DebugDrawerField(
               label: "PixelRatio", value: "${mediaQuery.devicePixelRatio}"),
           DebugDrawerField(
@@ -155,16 +184,16 @@ class DebugDrawerField extends StatelessWidget {
         .of(context)
         .theme;
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 2),
+      padding: EdgeInsets.symmetric(vertical: 6),
       alignment: Alignment.topLeft,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
               padding: EdgeInsets.only(right: 8),
-              width: 100,
+              width: 120,
               child: Text(
-                label,
+                "$label:",
                 style: theme.labelStyle,
               )),
           Expanded(
