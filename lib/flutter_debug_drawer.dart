@@ -5,4 +5,5 @@ export 'src/base/module_widgets.dart';
 export 'src/drawer/debug_drawer.dart';
 export 'src/drawer/debug_drawer_theme.dart';
 export 'src/modules/media_query.dart';
+export 'src/modules/package.dart';
 export 'src/modules/platform.dart';

@@ -11,12 +11,12 @@ class MyApp extends StatelessWidget {
       builder: DebugDrawerBuilder.build(modules: [
         PlatformModule(),
         MediaQueryModule(),
+        PackageModule(),
       ]),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
-      //navigatorObservers: [NO()],
     );
   }
 }
