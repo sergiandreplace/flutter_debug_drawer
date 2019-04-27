@@ -23,26 +23,6 @@ class MediaQueryModule extends DebugDrawerModule {
             value: "${mediaQuery.devicePixelRatio}",
           ),
           DebugDrawerField(
-            label: "Accesible Navigation",
-            value: "${mediaQuery.accessibleNavigation}",
-          ),
-          DebugDrawerField(
-            label: "Always use 24 hour format",
-            value: "${mediaQuery.alwaysUse24HourFormat}",
-          ),
-          DebugDrawerField(
-            label: "Bold text",
-            value: "${mediaQuery.boldText}",
-          ),
-          DebugDrawerField(
-            label: "PixelRatio",
-            value: "${mediaQuery.disableAnimations}",
-          ),
-          DebugDrawerField(
-            label: "InvertColors",
-            value: "${mediaQuery.invertColors}",
-          ),
-          DebugDrawerField(
             label: "Orientation",
             value: "${mediaQuery.orientation.toString()}",
           ),
