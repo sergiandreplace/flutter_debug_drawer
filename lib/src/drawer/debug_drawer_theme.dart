@@ -12,6 +12,8 @@ class DebugDrawerTheme {
   final double sectionTitleSeparatorHeight;
   final TextStyle labelStyle;
   final TextStyle valueStyle;
+  final Color buttonColor;
+  final TextStyle buttonStyle;
 
   const DebugDrawerTheme({
     this.backgroundColor,
@@ -25,6 +27,8 @@ class DebugDrawerTheme {
     this.sectionTitleSeparatorHeight,
     this.labelStyle,
     this.valueStyle,
+    this.buttonColor,
+    this.buttonStyle,
   })  : assert(backgroundColor != null),
         assert(sectionColor != null),
         assert(width != null),
@@ -35,7 +39,9 @@ class DebugDrawerTheme {
         assert(sectionTitleSeparatorPadding != null),
         assert(sectionTitleSeparatorHeight != null),
         assert(labelStyle != null),
-        assert(valueStyle != null);
+        assert(valueStyle != null),
+        assert(buttonColor != null),
+        assert(buttonStyle != null);
 
   static TextStyle defaultTextStyle = TextStyle(
       fontFamily: "Roboto Condensed", color: Colors.white, fontSize: 14);
@@ -55,5 +61,7 @@ class DebugDrawerTheme {
     sectionTitleSeparatorColor: Colors.white70,
     labelStyle: defaultTextStyle.copyWith(color: Colors.white70),
     valueStyle: defaultTextStyle.copyWith(fontWeight: FontWeight.normal),
+    buttonColor: Colors.white,
+    buttonStyle: defaultTextStyle.copyWith(color: Colors.black),
   );
 }

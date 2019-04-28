@@ -46,15 +46,32 @@ class DebugDrawer extends StatelessWidget {
       endDrawer: MediaQuery.removePadding(
         removeTop: true,
         context: context,
-        child: Container(
-          padding: EdgeInsets.fromLTRB(4, MediaQuery.of(context).padding.top, 4,
-              MediaQuery.of(context).padding.bottom),
-          color: theme.backgroundColor,
-          width: theme.width,
-          child: ListView(
-            children: modules,
-          ),
-        ),
+        child: new DebugDrawerBody(modules: modules),
+      ),
+    );
+  }
+}
+
+class DebugDrawerBody extends StatelessWidget {
+  const DebugDrawerBody({
+    Key key,
+    @required this.modules,
+  }) : super(key: key);
+
+  final List<Widget> modules;
+
+  @override
+  Widget build(BuildContext context) {
+    DebugDrawerTheme theme = DebugDrawer.of(context).theme;
+
+    return Container(
+      padding: EdgeInsets.only(
+          top: MediaQuery.of(context).padding.top,
+          bottom: MediaQuery.of(context).padding.bottom),
+      color: theme.backgroundColor,
+      width: theme.width,
+      child: ListView(
+        children: modules,
       ),
     );
   }

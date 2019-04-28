@@ -12,11 +12,12 @@ class MyApp extends StatelessWidget {
         PlatformModule(),
         MediaQueryModule(),
         PackageModule(),
+        SharedPreferencesModule(),
       ]),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: MyHomePage(),navigatorObservers: ,
     );
   }
 }

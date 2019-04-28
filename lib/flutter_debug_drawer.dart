@@ -7,3 +7,4 @@ export 'src/drawer/debug_drawer_theme.dart';
 export 'src/modules/media_query.dart';
 export 'src/modules/package.dart';
 export 'src/modules/platform.dart';
+export 'src/modules/sharedprefs.dart';

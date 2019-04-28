@@ -36,3 +36,30 @@ class DebugDrawerField extends StatelessWidget {
     );
   }
 }
+
+class DebugDrawerButton extends StatelessWidget {
+  final VoidCallback onPressed;
+  final String label;
+
+  const DebugDrawerButton({
+    Key key,
+    this.onPressed,
+    this.label,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    DebugDrawerTheme theme = DebugDrawer.of(context).theme;
+
+    return Container(
+      child: RaisedButton(
+        color: theme.buttonColor,
+        onPressed: onPressed,
+        child: Text(
+          label,
+          style: theme.buttonStyle,
+        ),
+      ),
+    );
+  }
+}
