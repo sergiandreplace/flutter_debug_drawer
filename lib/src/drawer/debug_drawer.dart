@@ -46,7 +46,7 @@ class DebugDrawer extends StatelessWidget {
       endDrawer: MediaQuery.removePadding(
         removeTop: true,
         context: context,
-        child: new DebugDrawerBody(modules: modules),
+        child: DebugDrawerBody(modules: modules),
       ),
     );
   }
