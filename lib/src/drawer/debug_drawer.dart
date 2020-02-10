@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import '../../flutter_debug_drawer.dart';
 import 'debug_drawer_theme.dart';
 
 class DebugDrawerBuilder {
@@ -17,6 +18,15 @@ class DebugDrawerBuilder {
     } else {
       return null;
     }
+  }
+
+  static TransitionBuilder buildDefault() {
+    return build(modules: [
+      PlatformModule(),
+      MediaQueryModule(),
+      PackageModule(),
+      SharedPreferencesModule(),
+    ]);
   }
 }
 
