@@ -6,15 +6,14 @@ import '../base/module_widgets.dart';
 class SharedPreferencesModule extends DebugDrawerModule {
   @override
   Widget build(BuildContext context) {
-    MediaQueryData mediaQuery = MediaQuery.of(context);
     return DebugDrawerModule(
-      title: "Shared preferences",
+      title: 'Shared preferences',
       child: Column(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           DebugDrawerButton(
-            label: "Show shared preferences",
+            label: 'Show shared preferences',
             onPressed: () {
               Navigator.of(context).push(
                 PageRouteBuilder(
@@ -39,7 +38,7 @@ class _SharedPrefsPageState extends State<SharedPrefsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Shared preferences"),
+        title: Text('Shared preferences'),
       ),
       body: Container(),
     );

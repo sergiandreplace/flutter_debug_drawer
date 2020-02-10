@@ -21,21 +21,20 @@ class DebugDrawerBuilder {
 }
 
 class DebugDrawer extends StatelessWidget {
+  const DebugDrawer({
+    Key key,
+    this.child,
+    this.modules = const [],
+    this.theme,
+  }) : super(key: key);
   final Widget child;
 
   final DebugDrawerTheme theme;
 
   final List<Widget> modules;
 
-  DebugDrawer({
-    Key key,
-    this.child,
-    this.modules = const [],
-    this.theme,
-  }) : super(key: key);
-
   static DebugDrawer of(BuildContext context) {
-    return context.ancestorWidgetOfExactType(DebugDrawer);
+    return context.findAncestorWidgetOfExactType<DebugDrawer>();
   }
 
   @override
@@ -62,7 +61,7 @@ class DebugDrawerBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DebugDrawerTheme theme = DebugDrawer.of(context).theme;
+    final theme = DebugDrawer.of(context).theme;
 
     return Container(
       padding: EdgeInsets.only(

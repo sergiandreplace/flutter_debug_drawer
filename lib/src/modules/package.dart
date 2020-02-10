@@ -10,32 +10,32 @@ class PackageModule extends StatefulWidget {
 }
 
 class _PackageModuleState extends State<PackageModule> {
-  String appName = "";
-  String packageName = "";
-  String version = "";
-  String buildNumber = "";
+  String appName = '';
+  String packageName = '';
+  String version = '';
+  String buildNumber = '';
 
   @override
   Widget build(BuildContext context) {
     return DebugDrawerModule(
-      title: "Package Info",
+      title: 'Package Info',
       child: Column(
         children: [
           DebugDrawerField(
-            label: "App name",
-            value: "$appName",
+            label: 'App name',
+            value: '$appName',
           ),
           DebugDrawerField(
-            label: "Package name",
-            value: "$packageName",
+            label: 'Package name',
+            value: '$packageName',
           ),
           DebugDrawerField(
-            label: "App version",
-            value: "$version",
+            label: 'App version',
+            value: '$version',
           ),
           DebugDrawerField(
-            label: "Build number",
-            value: "$buildNumber",
+            label: 'Build number',
+            value: '$buildNumber',
           ),
         ],
       ),

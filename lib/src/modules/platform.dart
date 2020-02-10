@@ -9,40 +9,40 @@ class PlatformModule extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DebugDrawerModule(
-      title: "Platform",
+      title: 'Platform',
       child: Column(
         children: [
           DebugDrawerField(
-            label: "OS",
-            value: "${Platform.operatingSystem}",
+            label: 'OS',
+            value: '${Platform.operatingSystem}',
           ),
           DebugDrawerField(
-            label: "OS Version",
-            value: "${Platform.operatingSystemVersion}",
+            label: 'OS Version',
+            value: '${Platform.operatingSystemVersion}',
           ),
           DebugDrawerField(
-            label: "Isolate script",
-            value: "${Platform.script.toString()}",
+            label: 'Isolate script',
+            value: '${Platform.script.toString()}',
           ),
           DebugDrawerField(
-            label: "Path separator",
-            value: "${Platform.pathSeparator}",
+            label: 'Path separator',
+            value: '${Platform.pathSeparator}',
           ),
           DebugDrawerField(
-            label: "Locale name",
-            value: "${Platform.localeName}",
+            label: 'Locale name',
+            value: '${Platform.localeName}',
           ),
           DebugDrawerField(
-            label: "Local hostname",
-            value: "${Platform.localHostname}",
+            label: 'Local hostname',
+            value: '${Platform.localHostname}',
           ),
           DebugDrawerField(
-            label: "Processors",
-            value: "${Platform.numberOfProcessors}",
+            label: 'Processors',
+            value: '${Platform.numberOfProcessors}',
           ),
           DebugDrawerField(
-            label: "Package config",
-            value: "${Platform.packageConfig}",
+            label: 'Package config',
+            value: '${Platform.packageConfig}',
           ),
         ],
       ),

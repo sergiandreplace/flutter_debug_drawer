@@ -27,7 +27,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("UNO"),
+        title: Text('UNO'),
       ),
       body: Center(
         child: Column(
@@ -38,7 +38,7 @@ class MyHomePage extends StatelessWidget {
             ),
             Text(
               'hola',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
@@ -58,7 +58,7 @@ class Page2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("DOS"),
+        title: Text('DOS'),
       ),
       body: Center(
         child: Column(
@@ -69,7 +69,7 @@ class Page2 extends StatelessWidget {
             ),
             Text(
               'PEPEc',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
