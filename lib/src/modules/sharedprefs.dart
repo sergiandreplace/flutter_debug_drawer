@@ -5,12 +5,19 @@ import '../base/base_module.dart';
 import '../base/module_widgets.dart';
 
 class SharedPreferencesModule extends DebugDrawerModule {
+  Future<SharedPreferences> _loadPrefs() async {
+    final pref = await SharedPreferences.getInstance();
+    await pref.reload();
+    print('reloaded');
+    return pref;
+  }
+
   @override
   Widget build(BuildContext context) {
     return DebugDrawerModule(
       title: 'Shared preferences',
       child: FutureBuilder(
-        future: SharedPreferences.getInstance(),
+        future: _loadPrefs(),
         builder:
             (BuildContext context, AsyncSnapshot<SharedPreferences> snapshot) {
           if (!snapshot.hasData) {
