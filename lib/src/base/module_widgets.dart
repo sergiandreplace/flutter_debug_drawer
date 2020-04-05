@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../drawer/debug_drawer.dart';
-import '../drawer/debug_drawer_theme.dart';
 
 class DebugDrawerField extends StatelessWidget {
+  const DebugDrawerField({Key key, this.label, this.value}) : super(key: key);
+
   final String label;
   final String value;
 
-  DebugDrawerField({Key key, this.label, this.value}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    DebugDrawerTheme theme = DebugDrawer.of(context).theme;
+    final theme = DebugDrawer.of(context).theme;
     return Container(
       padding: EdgeInsets.symmetric(vertical: 6),
       alignment: Alignment.topLeft,
@@ -22,7 +21,7 @@ class DebugDrawerField extends StatelessWidget {
               padding: EdgeInsets.only(right: 8),
               width: 120,
               child: Text(
-                "$label:",
+                '$label:',
                 style: theme.labelStyle,
               )),
           Expanded(
@@ -38,18 +37,18 @@ class DebugDrawerField extends StatelessWidget {
 }
 
 class DebugDrawerButton extends StatelessWidget {
-  final VoidCallback onPressed;
-  final String label;
-
   const DebugDrawerButton({
     Key key,
     this.onPressed,
     this.label,
   }) : super(key: key);
 
+  final VoidCallback onPressed;
+  final String label;
+
   @override
   Widget build(BuildContext context) {
-    DebugDrawerTheme theme = DebugDrawer.of(context).theme;
+    final theme = DebugDrawer.of(context).theme;
 
     return Container(
       child: RaisedButton(

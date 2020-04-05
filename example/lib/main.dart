@@ -8,16 +8,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      builder: DebugDrawerBuilder.build(modules: [
-        PlatformModule(),
-        MediaQueryModule(),
-        PackageModule(),
-        SharedPreferencesModule(),
-      ]),
+      builder: DebugDrawerBuilder.buildDefault(),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),navigatorObservers: ,
+      home: MyHomePage(),
     );
   }
 }
@@ -27,7 +22,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("UNO"),
+        title: Text('UNO'),
       ),
       body: Center(
         child: Column(
@@ -38,14 +33,14 @@ class MyHomePage extends StatelessWidget {
             ),
             Text(
               'hola',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.of(context)
-            .push(PageRouteBuilder(pageBuilder: (context, _, __) => Page2())),
+        onPressed: () => Navigator.of(context).push<void>(PageRouteBuilder(
+            pageBuilder: (BuildContext context, _, __) => Page2())),
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
@@ -58,7 +53,7 @@ class Page2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("DOS"),
+        title: Text('DOS'),
       ),
       body: Center(
         child: Column(
@@ -69,7 +64,7 @@ class Page2 extends StatelessWidget {
             ),
             Text(
               'PEPEc',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),

@@ -39,3 +39,6 @@ build/
 .android/
 .ios/
 .flutter-plugins
+example/.flutter-plugins-dependencies
+example/ios/Podfile
+example/ios/Flutter/flutter_export_environment.sh

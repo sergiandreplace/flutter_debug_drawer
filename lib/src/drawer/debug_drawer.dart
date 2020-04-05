@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import '../../flutter_debug_drawer.dart';
 import 'debug_drawer_theme.dart';
 
 class DebugDrawerBuilder {
@@ -18,24 +19,32 @@ class DebugDrawerBuilder {
       return null;
     }
   }
+
+  static TransitionBuilder buildDefault() {
+    return build(modules: [
+      PlatformModule(),
+      MediaQueryModule(),
+      PackageModule(),
+      SharedPreferencesModule(),
+    ]);
+  }
 }
 
 class DebugDrawer extends StatelessWidget {
+  const DebugDrawer({
+    Key key,
+    this.child,
+    this.modules = const [],
+    this.theme,
+  }) : super(key: key);
   final Widget child;
 
   final DebugDrawerTheme theme;
 
   final List<Widget> modules;
 
-  DebugDrawer({
-    Key key,
-    this.child,
-    this.modules = const [],
-    this.theme,
-  }) : super(key: key);
-
   static DebugDrawer of(BuildContext context) {
-    return context.ancestorWidgetOfExactType(DebugDrawer);
+    return context.findAncestorWidgetOfExactType<DebugDrawer>();
   }
 
   @override
@@ -46,7 +55,7 @@ class DebugDrawer extends StatelessWidget {
       endDrawer: MediaQuery.removePadding(
         removeTop: true,
         context: context,
-        child: new DebugDrawerBody(modules: modules),
+        child: DebugDrawerBody(modules: modules),
       ),
     );
   }
@@ -62,7 +71,7 @@ class DebugDrawerBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DebugDrawerTheme theme = DebugDrawer.of(context).theme;
+    final theme = DebugDrawer.of(context).theme;
 
     return Container(
       padding: EdgeInsets.only(

@@ -1,20 +1,6 @@
 import 'package:flutter/material.dart';
 
 class DebugDrawerTheme {
-  final Color backgroundColor;
-  final Color sectionColor;
-  final double width;
-  final EdgeInsetsGeometry sectionPadding;
-  final EdgeInsetsGeometry sectionMargin;
-  final TextStyle sectionTitleStyle;
-  final Color sectionTitleSeparatorColor;
-  final EdgeInsetsGeometry sectionTitleSeparatorPadding;
-  final double sectionTitleSeparatorHeight;
-  final TextStyle labelStyle;
-  final TextStyle valueStyle;
-  final Color buttonColor;
-  final TextStyle buttonStyle;
-
   const DebugDrawerTheme({
     this.backgroundColor,
     this.sectionColor,
@@ -43,8 +29,22 @@ class DebugDrawerTheme {
         assert(buttonColor != null),
         assert(buttonStyle != null);
 
+  final Color backgroundColor;
+  final Color sectionColor;
+  final double width;
+  final EdgeInsetsGeometry sectionPadding;
+  final EdgeInsetsGeometry sectionMargin;
+  final TextStyle sectionTitleStyle;
+  final Color sectionTitleSeparatorColor;
+  final EdgeInsetsGeometry sectionTitleSeparatorPadding;
+  final double sectionTitleSeparatorHeight;
+  final TextStyle labelStyle;
+  final TextStyle valueStyle;
+  final Color buttonColor;
+  final TextStyle buttonStyle;
+
   static TextStyle defaultTextStyle = TextStyle(
-      fontFamily: "Roboto Condensed", color: Colors.white, fontSize: 14);
+      fontFamily: 'Roboto Condensed', color: Colors.white, fontSize: 14);
 
   static DebugDrawerTheme defaultTheme = DebugDrawerTheme(
     backgroundColor: Colors.black,
