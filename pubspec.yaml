@@ -2,7 +2,7 @@ name: flutter_debug_drawer
 description: Adds a side menu in all screens with debug information. You can decide which information to show and create new modules to show information.
 author: Sergi Martínez <sergi.martinez@gmail.com>
 homepage: https://github.com/sergiandreplace/flutter_debug_drawer
-version: 0.0.2
+version: 0.0.3
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^0.1.2
-  package_info: ^0.4.0+3
+  package_info: '>=0.4.0+3 <2.0.0'
   shared_preferences: ^0.5.2
 
 
